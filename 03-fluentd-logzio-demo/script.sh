@@ -8,7 +8,7 @@ minikube start --vm-driver=hyperkit \
 --extra-config=controller-manager.address=0.0.0.0
 
 kubectl create secret generic logzio-logs-secret \
-    --from-literal=logzio-log-shipping-token=nNQZQoLunsklqksPwbTSkydGNZUiENYT \
+    --from-literal=logzio-log-shipping-token=XXX \
     --from-literal=logzio-log-listener=https://listener.logz.io:8071 -n kube-system
 
 kubectl create -f daemonset.yaml
