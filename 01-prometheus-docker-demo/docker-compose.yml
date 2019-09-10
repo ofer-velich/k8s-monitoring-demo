@@ -1,0 +1,52 @@
+version: '2'
+services:
+    prometheus:
+        image: prom/prometheus
+        volumes:
+            - prometheus_data:/prometheus
+            - ./prometheus.yml:/etc/prometheus/prometheus.yml
+            - ./prometheus.rules.yml:/etc/prometheus/prometheus.rules.yml
+        command:
+            - '--config.file=/etc/prometheus/prometheus.yml'
+        ports:
+            - '9090:9090'
+
+    node-exporter:
+        image: prom/node-exporter
+        ports:
+            - '9100:9100'
+
+    grafana:
+        image: grafana/grafana
+        volumes:
+            - grafana_data:/var/lib/grafana
+        environment:
+            - GF_SECURITY_ADMIN_PASSWORD=pass
+        depends_on:
+            - prometheus
+        ports:
+            - "3000:3000"
+
+    alertmanager:
+        image: prom/alertmanager:0.1.1
+        ports:
+            - '9093:9093'
+        volumes:
+            - ./alertmanager.yml:/alertmanager.yml
+        command:
+            - '--config.file=/alertmanager.yml'
+
+    cadvisor:
+        image: google/cadvisor:latest
+        ports:
+            - '8080:8080'
+        volumes:
+            - '/:/rootfs'    
+            - '/var/run:/var/run'    
+            - '/sys:/host/sys'    
+            - '/var/lib/docker:/var/lib/docker'    
+
+
+volumes:
+    prometheus_data: {}
+    grafana_data: {}

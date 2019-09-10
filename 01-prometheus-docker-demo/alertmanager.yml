@@ -1,0 +1,9 @@
+route:
+    receiver: 'slack'
+receivers:
+    - name: 'slack'
+      slack_configs:
+          - send_resolved: true
+            username: 'Prometheus'
+            channel: '#alertmanager-demo'
+            api_url: 'https://hooks.slack.com/services/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'

@@ -1,0 +1,51 @@
+# Tested with stable/prometheus-operator v4.3.6
+
+# The stable/prometheus-operator deploys some services that are used by the ServiceMonitors to scrape the metrics. 
+# The default selectors configured in this services may not match the labels of your cluster (which is the minikube case)
+coreDns:
+  service:
+    selector:
+      k8s-app: kube-dns
+
+kubeControllerManager:
+  service:
+    selector:
+      k8s-app: null
+      component: kube-controller-manager
+
+kubeEtcd:
+  service:
+    selector:
+      k8s-app: null
+      component: etcd
+
+kubeScheduler:
+  service:
+    selector:
+      k8s-app: null
+      component: kube-scheduler
+
+## Configuration for alertmanager
+alertmanager:
+  config:
+    global:
+      resolve_timeout: 5m
+    route:
+      group_by: ['job']
+      group_wait: 30s
+      group_interval: 5m
+      repeat_interval: 12h
+      receiver: 'null'
+      routes:
+      - match:
+          alertname: Watchdog
+        receiver: 'null'
+    # This inhibt rule is a hack from: https://stackoverflow.com/questions/54806336/how-to-silence-prometheus-alertmanager-using-config-files/54814033#54814033
+    inhibit_rules:
+      - target_match_re:
+           alertname: '.+Overcommit'
+        source_match:
+           alertname: 'Watchdog'
+        equal: ['prometheus']
+    receivers:
+    - name: 'null'
