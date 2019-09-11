@@ -11,10 +11,14 @@ docker-compose up
 
 # review the alerts on the Prometheus the alerts tab
 
-# trigger and alert and view it on slack
-
+# trigger an alert
 docker run --rm -it busybox sh -c "while true; do :; done"
+
+# add datasource on Grafana
 
 # review dashboard on Grapana
 
+# view the alert on slack and on the Alertmanager
+
 docker-compose down
+
