@@ -12,7 +12,7 @@ minikube start --vm-driver=hyperkit \
 
 # Deploy fluentd
 kubectl create secret generic logzio-logs-secret \
-    --from-literal=logzio-log-shipping-token=nNQZQoLunsklqksPwbTSkydGNZUiENYT \
+    --from-literal=logzio-log-shipping-token=LOGZIO_SHIPPING_TOKEN \
     --from-literal=logzio-log-listener=https://listener.logz.io:8071 -n kube-system
 
 kubectl create -f daemonset.yaml

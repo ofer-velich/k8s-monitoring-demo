@@ -2,7 +2,7 @@
 
 # Store your Logz.io credentials
 kubectl --namespace=kube-system create secret generic logzio-metrics-secret \
-  --from-literal=logzio-metrics-shipping-token=grsGcePbFjEehyvJOumYEXGARHRLdbjx \
+  --from-literal=logzio-metrics-shipping-token=LOGZIO_SHIPPING_TOKEN \
   --from-literal=logzio-metrics-listener-host=listener.logz.io
 
 
