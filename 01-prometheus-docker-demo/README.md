@@ -64,7 +64,7 @@ $ sum by(path) (rate(http_requests_total{status="500"}[5m])) / sum by(path) (rat
 ### What are the common metrics we scrape on k8s
 - node-exporter expose the machine metrics (cpu load network disk etc)
 - cAdvisor expose the container metrics (cpu load network disk etc)
-- kube-state-metrics expose state metrics like number of deployment replicas
+- kube-state-metrics expose state metrics of k8s cluster like number of deployment replicas
 
 ### Downsides
 - On HA dashboarding need to have sticky sessions
