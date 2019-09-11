@@ -71,7 +71,7 @@ $ sum by(path) (rate(http_requests_total{status="500"}[5m])) / sum by(path) (rat
 - Huge configuration, for lots scraping components very hard to maintain or to troubleshot on a downtime 
 - On large federated hierarchy deployments:
     - Its more hard to get queries to target the correct shard 
-    - Its more hard to have cluster services wide holistic view from a single query.
+    - Its more hard to have services wide holistic view in a single query.
     - Its result in an increased configuration burden, 
     - Add an additional potential failure point
     - Security, Required complex rules to expose only certain data on the federated endpoint. 
