@@ -1,6 +1,10 @@
-# Monitoring k8s with logz.io 
+# Ship Kubernetes metrics to Logz.io using Metricbeat
 
-## Requiremets:
+## What is Metricbeat?
+- A lightweight data shipper by Elastic, ships various type of metrics
+- Easy to plug into Kubernetes, as a daemonset
+
+## Requirements:
 - minikube
 - kubectl
 
