@@ -1,6 +1,6 @@
-# Shipping k8s logs using fluentd plugin to logz.io 
+# Shipping Kubernetes logs to Logz.io using fluentd  
 
-## Requiremets:
+## Requirements:
 - minikube
 - kubectl
 
