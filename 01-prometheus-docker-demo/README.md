@@ -24,13 +24,14 @@
 - based on time series metrics (i.e name timestamp and value)
 - dimensional data model, metric name with timestamp and key value labels pairs attached. With this multi dimensional data model you can get more complexed and efficient queries, and one metric can be translated to N time series.
 
-Example of dot separated objects hierarchy (graphite etc) vs dimensional data model (prometheus):
+Example of dot separated objects hierarchy (graphite etc) VS dimensional data model (prometheus):
 ```
 nginx.ip-1-2-3-5-80.home.200.http_requests_total 
-http_requests_total{job="nginx",instance="1.2.3.4:80",path="/home",status="200"} http_requests_total{job="nginx",instance="1.2.3.5:80",path="/settings",status="500"} 
+http_requests_total{job="nginx",instance="1.2.3.4:80",path="/home",status="200"}
+http_requests_total{job="nginx",instance="1.2.3.5:80",path="/settings",status="500"} 
 ```
 
-Example of dot separated objects hierarchy vs dimensional data model query:
+Example of dot separated objects hierarchy VS dimensional data model query:
 ```
 *.nginx.*.*.500.*.http_requests_total 
 http_requests_total{job="nginx",status="500"}
