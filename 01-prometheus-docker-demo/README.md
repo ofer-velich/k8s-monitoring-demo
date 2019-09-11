@@ -14,6 +14,12 @@
 - Support for clients in many languages
 - Provides exporters to connect other application (i.e Postgresql, Mysql, ETCD)
 
+### Why Prometheus:
+- Dimensional data model
+- Query language 
+- Service discovery integration
+- Simple to setup
+
 ### Dimensional data model:
 - based on time series metrics (i.e name timestamp and value)
 - dimensional data model, metric name with timestamp and key value labels pairs attached. With this multi dimensional data model you can get more complexed and efficient queries, and one metric can be translated to N time series.
