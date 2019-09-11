@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# Minikube setup
-# (starting minikube with extra-config to start controller-manager and the scheduler listening on 0.0.0.0 (all interfaces) so Prometheus can scrape it. Etcd (default to listens on 127.0.0.1) is more complicated)
+# Overview of the prometheus-operator
+
+# Minikube setup (starting minikube with extra-config to start controller-manager and the scheduler listening on 0.0.0.0 (all interfaces) so Prometheus can scrape it. Etcd (default to listens on 127.0.0.1) is more complicated)
 minikube start --vm-driver=hyperkit \
 --memory=4096 \
 --bootstrapper=kubeadm \
