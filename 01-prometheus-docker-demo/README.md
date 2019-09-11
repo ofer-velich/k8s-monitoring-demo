@@ -103,9 +103,9 @@ Configuring Prometheus storage retention
 - Remote writes, work by "tailing" time series samples written to local storage, and queuing them up for write to remote storage.
 
 ### Examles
-Cortex (Weaveworks) - Cortex is an open source SAAS multi-tenant, horizontally scalable version of Prometheus
-Thanos (Improbable) 
-Vulcan (Digital Ocean) - use push gate way and metric scrapers that push data to kafka that write it to Cassandra store where the Prometheus is reading from
+- Cortex (Weaveworks) - Cortex is an open source SAAS multi-tenant, horizontally scalable version of Prometheus
+- Thanos (Improbable) 
+- Vulcan (Digital Ocean) - use push gate way and metric scrapers that push data to kafka that write it to Cassandra store where the Prometheus is reading from
 
 ## Alerting
 
