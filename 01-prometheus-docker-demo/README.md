@@ -89,7 +89,7 @@ $ sum by(path) (rate(http_requests_total{status="500"}[5m])) / sum by(path) (rat
 ### Scaling (Sharding And Federation)
 - Single Prometheus server can only scale verticaliy. With Sharding, you can divide Prometheus servers into multiple groups, so each group is small enough for a single Prometheus instance to scrape
 - Functional sharding (recommended) meaning, all instances of Service A are being scraped by Prometheus A.
-- Automatically sharding 
+- Automatic sharding 
 - To be able to query and alert on sharded deployment, Prometheus federation can be used to fan in the relevant servers. 
 
 ### Storage And retention
