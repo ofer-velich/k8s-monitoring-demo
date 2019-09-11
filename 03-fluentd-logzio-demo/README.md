@@ -9,4 +9,5 @@
 - monitor kubelet logs
 - monitor continers logs
 
- 
+### References:
+https://logz.io/blog/kubernetes-logging-fluentd/

@@ -47,5 +47,6 @@ There is a config-reloader sidecar container for the Alertmanager pod.
 Watchdog, an alert meant to be always firing. 
 In our example we created an inhibition rule to match all .+Overcommit(regex) alerts with the Watchdog, inhibiting them forever.
 
-References:
+### References:
 https://medium.com/faun/trying-prometheus-operator-with-helm-minikube-b617a2dccfa3
+

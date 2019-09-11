@@ -7,6 +7,8 @@ minikube start --vm-driver=hyperkit \
 --extra-config=scheduler.address=0.0.0.0 \
 --extra-config=controller-manager.address=0.0.0.0
 
+# Review fluentd configuration
+
 # Deploy fluentd
 kubectl create secret generic logzio-logs-secret \
     --from-literal=logzio-log-shipping-token=nNQZQoLunsklqksPwbTSkydGNZUiENYT \

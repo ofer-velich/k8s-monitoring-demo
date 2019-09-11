@@ -133,4 +133,5 @@ group_wait: 30s  # necessary to eventually group further upcoming alerts that ma
 group_interval: 5m #  how long to wait before dispatching further notifications of the same group 
 ```
 
-
+### References:
+https://finestructure.co/blog/2016/5/16/monitoring-with-prometheus-grafana-docker-part-1
