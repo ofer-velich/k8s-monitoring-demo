@@ -1,4 +1,4 @@
-# running prometheus with docker
+# Running prometheus with docker
 
 ## Requiremets:
 - Docker compose
@@ -99,7 +99,6 @@ Configuring Prometheus storage retention
 Cortex (Weaveworks) - Cortex is an open source SAAS multi-tenant, horizontally scalable version of Prometheus
 Thanos (Improbable) 
 Vulcan (Digital Ocean) - use push gate way and metric scrapers that push data to kafka that write it to Cassandra store where the Prometheus is reading from
-
 
 ## Alerting
 

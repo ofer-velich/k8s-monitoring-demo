@@ -7,12 +7,14 @@ minikube start --vm-driver=hyperkit \
 --extra-config=scheduler.address=0.0.0.0 \
 --extra-config=controller-manager.address=0.0.0.0
 
+# Deploy fluentd
 kubectl create secret generic logzio-logs-secret \
-    --from-literal=logzio-log-shipping-token=XXX \
+    --from-literal=logzio-log-shipping-token=nNQZQoLunsklqksPwbTSkydGNZUiENYT \
     --from-literal=logzio-log-listener=https://listener.logz.io:8071 -n kube-system
 
 kubectl create -f daemonset.yaml
 
 kubectl create -f nginx.yaml
 
+# Create some error/access logs by serfing to the minikube ip
 minikube ip
