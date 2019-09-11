@@ -14,7 +14,7 @@
 - Support for clients in many languages
 - Provides exporters to connect other application (i.e Postgresql, Mysql, ETCD)
 
-### Why Prometheus:
+### Why Prometheus?
 - Dimensional data model
 - Query language 
 - Service discovery integration
